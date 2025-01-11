@@ -15,7 +15,7 @@ export default async function AnimalPage({ params }: { params: { name: string } 
   if (!animal) {
     return (
       <div className="text-center text-gray-600 mt-10">
-        <p className='mb-2 font-bold'>"Sorry, we couldn't find the animal you're looking for."</p>
+        <p className='mb-2 font-bold'>Sorry, we couldn&apos;t find the animal you&apos;re looking for.</p>
         <Link href="/" className="text-blue-500 hover:underline">Go back to the homepage</Link>
       </div>
     );
