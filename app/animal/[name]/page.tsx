@@ -1,30 +1,8 @@
-import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Badge } from "@/app/components/ui/badge";
 import { fetchAnimal } from "../../utils/api";
 
-
-
-
-export async function generateMetadata({ params }: { params: { name: string } }):Promise<Metadata> {
-  const { name } = params;
-
-  try {
-    const animal = await fetchAnimal(name);
-    return {
-      title: `${animal.name} | Animal Information`,
-      description: animal.characteristics.slogan || `Learn about the ${animal.name}`,
-    };
-  } catch {
-    return {
-      title: "Animal Not Found",
-      description: "The requested animal information could not be found.",
-    };
-  }
-}
-
-// Page Component
 export default async function AnimalPage({ params }: { params: { name: string } }) {
   const { name } = params;
 
@@ -59,8 +37,8 @@ export default async function AnimalPage({ params }: { params: { name: string } 
           <h1 className="text-3xl font-bold text-gray-800 dark:text-white">{animal.name}</h1>
           <p className="mb-4 font-sans">{animal.characteristics.slogan}</p>
           <div className="flex flex-wrap gap-2 mb-4">
-            <Badge variant="secondary">{animal.taxonomy.class}</Badge>
-            <Badge variant="outline">{animal.characteristics.diet}</Badge>
+            <Badge className="font-light" variant="secondary">{animal.taxonomy.class}</Badge>
+            <Badge className="font-light" variant="outline">{animal.characteristics.diet}</Badge>
           </div>
           <div className="grid grid-cols-1 gap-3 mb-3">
             <div>
@@ -100,6 +78,26 @@ export default async function AnimalPage({ params }: { params: { name: string } 
             <p className="text-gray-600 dark:text-gray-400">
               {animal.locations.join(", ")}
             </p>
+          </div>
+          <div>
+            <h2 className="text-xl font-semibold mb-2 text-gray-800 dark:text-white">
+              Characteristics
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {Object.entries(animal.characteristics).map(([key, value]) =>
+                key !== "slogan" ? (
+                  <div key={key} className="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg">
+                    <h3 className="font-semibold text-gray-800 dark:text-white mb-1">
+                      {key
+                        .split("_")
+                        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+                        .join(" ")}
+                    </h3>
+                    <p className="text-gray-600 dark:text-gray-400">{value}</p>
+                  </div>
+                ) : null
+              )}
+            </div>
           </div>
         </div>
       </div>
