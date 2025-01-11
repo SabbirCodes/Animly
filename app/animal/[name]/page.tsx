@@ -27,8 +27,7 @@ export default async function AnimalPage({ params }: { params: { name: string } 
   let animal;
   try {
     animal = await fetchAnimal(name);
-  } catch (error) {
-    console.error('Failed to fetch animal:', error);
+  } catch {
     notFound();
   }
 
