@@ -4,8 +4,10 @@ import { notFound } from "next/navigation";
 import { Badge } from "@/app/components/ui/badge";
 import { fetchAnimal } from "../../utils/api";
 
-// Metadata for SEO
-export async function generateMetadata({ params }: { params: { name: string } }) {
+
+
+
+export async function generateMetadata({ params }: { params: { name: string } }):Promise<Metadata> {
   const { name } = params;
 
   try {
