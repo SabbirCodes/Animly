@@ -3,7 +3,14 @@ import { notFound } from "next/navigation";
 import { Badge } from "@/app/components/ui/badge";
 import { fetchAnimal } from "../../utils/api";
 
-export default async function AnimalPage({ params }: { params: { name: string } }) {
+
+interface AnimalPageProps {
+  params: {
+      name: string;
+  };
+}
+
+export default async function AnimalPage({ params }: AnimalPageProps) {
   const { name }  = await  params;
   
 
