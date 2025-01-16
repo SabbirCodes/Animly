@@ -4,7 +4,8 @@ import { Badge } from "@/app/components/ui/badge";
 import { fetchAnimal } from "../../utils/api";
 
 export default async function AnimalPage({ params }: { params: { name: string } }) {
-  const { name } = params;
+  const { name }  = await  params;
+  
 
   let animal;
   try {
