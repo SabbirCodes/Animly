@@ -25,7 +25,8 @@ export async function fetchAnimal(name: string): Promise<Animal> {
       throw new Error(`No data found for animal: ${name}`);
     }
 
-    return data[0] as Animal;
+    // return data[0] as Animal;
+    return data as Animal;
   } catch (error) {
     console.error('Error in fetchAnimal:', error);
     throw error; // Re-throw the error so the caller can handle it
