@@ -4,14 +4,10 @@ import { Badge } from "@/app/components/ui/badge";
 import { fetchAnimal } from "../../utils/api";
 
 
-interface AnimalPageProps {
-  params: {
-      name: string;
-  };
-}
 
-export default async function AnimalPage({ params }: AnimalPageProps) {
+export default async function AnimalPage({ params }: any) {
   const { name }  = await  params;
+  console.log(params)
   
 
   let animal;
