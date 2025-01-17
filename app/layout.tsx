@@ -44,7 +44,7 @@ export default function RootLayout({
                 <ThemeToggle />
               </nav>
             </header>
-            <main className="flex-grow container mx-auto px-4 py-8">
+            <main className="flex-grow container mx-auto md:px-4 md:py-8">
               {children}
             </main>
             <footer className="bg-white dark:bg-gray-900 shadow-md">
