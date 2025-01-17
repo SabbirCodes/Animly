@@ -16,7 +16,7 @@ export default function AnimalList() {
   useEffect(() => {
     const shuffled = [...animals].sort(() => Math.random() - 0.5);
     setRandomAnimals(shuffled);
-  }, []);
+  }, [" "]);
 
   const loadMore = () => {
     setVisibleCount(visibleCount + 30);
@@ -25,8 +25,8 @@ export default function AnimalList() {
   return (
     <div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {randomAnimals.slice(0, visibleCount).map((animal) => (
-          <AnimalCard key={animal.id} name={animal.name} />
+        {randomAnimals.slice(0, visibleCount).map((animal, idx) => (
+          <AnimalCard key={idx} name={animal.name} />
         ))}
       </div>
 

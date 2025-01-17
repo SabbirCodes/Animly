@@ -4,9 +4,9 @@ interface Animals {
 }
 
 export const animals: Animals[] = [
-  { id: 0, name: "Red Panda" },
-  { id: 1, name: "Cape Lion" },
-  { id: 2, name: "African Bush Elephant" },
+  { id: 0, name: "Panda" },
+  { id: 1, name: "Lion" },
+  { id: 2, name: "Elephant" },
   { id: 3, name: "Giraffe" },
   { id: 4, name: "Adelie Penguin" },
   { id: 5, name: "Bengal Tiger" },

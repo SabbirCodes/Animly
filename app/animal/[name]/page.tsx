@@ -3,6 +3,17 @@ import { notFound } from "next/navigation";
 import { fetchAnimal } from "../../utils/api";
 import AnimalData from "@/app/components/AnimalData";
 
+import { Metadata } from "next";
+
+export async function generateMetadata({ params }: any): Promise<Metadata> {
+  const { name } = await params;
+
+  return {
+    title: `${name} - Animly`,
+    description: `Learn more about ${name}, its characteristics, habitat, and more.`
+  }
+}
+
 export default async function AnimalPage({ params }: any) {
   const { name } = await params;
 

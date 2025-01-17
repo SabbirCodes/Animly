@@ -8,7 +8,7 @@ if (!API_KEY) {
 
 export async function fetchAnimal(name: string): Promise<Animal> {
   try {
-    const response = await fetch(`https://api.api-ninjas.com/v1/animals?name=${encodeURIComponent(name)}`, {
+    const response = await fetch(`https://api.api-ninjas.com/v1/animals?name=${decodeURIComponent(name)}`, {
       headers: {
         'X-Api-Key': API_KEY,
       },

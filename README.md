@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Animly
 
-## Getting Started
+This is a web-based Animal Encyclopedia built using **Next.js**. It allows users to explore and learn about various animals, including their scientific names, habitats, behaviors, and other fascinating details.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Search Functionality**: Quickly search for animals by their names.
+- **Animal Details**: Detailed information about each animal, including:
+  - Scientific Name
+  - Habitat
+  - Behavior
+  - Diet
+- **Responsive Design**: Fully responsive for both desktop and mobile devices.
+- **Dynamic Routing**: Each animal has its own dedicated page with detailed information.
+- **Demo Image**:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+![Animly Demo](./public/animlydemo.png)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Technologies Used
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Next.js**: Framework for building server-rendered React applications.
+- **React.js**: Frontend JavaScript library.
+- **TailwindCSS**: For styling the application.
+- **API Integration**: Fetch animal data dynamically from **API Ninjas** a  third-party API.
 
-## Learn More
+## Installation
 
-To learn more about Next.js, take a look at the following resources:
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/SabbirCodes/Animly.git
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-## Deploy on Vercel
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+5. Open your browser and visit:
+   ```
+   http://localhost:3000
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Usage
+
+- Use the search bar on the homepage to find animals.
+- Click on an animal card to view detailed information about it.
+
+## Contact
+
+For any inquiries or suggestions, feel free to reach out at [sabbirhossain.py@gmail.com](mailto:sabbirhossain.py@gmail.com).
+
+---
+
+Enjoy exploring the **Wild**!
+

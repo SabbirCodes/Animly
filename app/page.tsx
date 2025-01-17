@@ -7,7 +7,6 @@ export default function Home() {
       <h1 className="text-2xl md:text-3xl font-bold mb-8 text-center text-gray-800 dark:text-white">
         Discover the Wild
       </h1>
-
       <SearchBar />
       <AnimalList />
     </main>
