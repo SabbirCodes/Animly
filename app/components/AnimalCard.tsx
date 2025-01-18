@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { Badge } from "@/app/components/ui/badge"
 
-export default function AnimalCard({ name }: { name: string }) {
+export default function AnimalCard({ name }: { name: string}) {
   return (
     <Link href={`/animal/${encodeURIComponent(name)}`}>
       <div className="border rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 bg-white dark:bg-gray-800">

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Badge } from "./ui/badge";
 import { Animal } from "../types";
 import { ArrowLeft } from "lucide-react";
+import AnimalImage from "./animal-image";
 
 interface AnimalType {
   animal: Animal;
@@ -14,7 +15,7 @@ const AnimalData: React.FC<AnimalType> = ({ animal }) => {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div key={animal.name} className="container mx-auto px-4 py-8">
       <Link
         href="/"
         className="text-blue-500 hover:underline mb-4 inline-block"
@@ -24,6 +25,10 @@ const AnimalData: React.FC<AnimalType> = ({ animal }) => {
         </div>
       </Link>
       <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+        {/* image  */}
+        <AnimalImage query={animal.name} />
+
+
         <div className="p-6">
           <h1 className="text-3xl font-bold text-gray-800 dark:text-white">
             {animal.name}

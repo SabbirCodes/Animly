@@ -17,7 +17,6 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
       description: `Explore detailed information about ${name}. Learn about its habitat, behaviors, and unique traits.`,
       images: [
         {
-          // url: `https://animly.vercel.app/animlydemo/${name}`,
           url: `https://animly.vercel.app/animlydemo.png`,
           width: 1200,
           height: 630,
