@@ -2,7 +2,6 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { fetchAnimal } from "../../utils/api";
 import AnimalData from "@/app/components/AnimalData";
-
 import { Metadata } from "next";
 
 export async function generateMetadata({ params }: any): Promise<Metadata> {
@@ -53,7 +52,7 @@ export default async function AnimalPage({ params }: any) {
 
 
   return Array.isArray(animal) && (
-    <div>
+    <div key={name}>
       {animal.map((data) => (
         <AnimalData key={data.id} animal={data} />
       ))}

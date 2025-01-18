@@ -1,34 +1,26 @@
-import Link from "next/link";
-import { Badge } from "./ui/badge";
-import { Animal } from "../types";
-import { ArrowLeft } from "lucide-react";
-import AnimalImage from "./animal-image";
+import Link from "next/link"
+import { Badge } from "./ui/badge"
+import { Animal } from "../types"
+import AnimalImage from "./animal-image"
+import { ArrowLeft } from "lucide-react"
 
 interface AnimalType {
-  animal: Animal;
+  animal: Animal
 }
 
-const AnimalData: React.FC<AnimalType> = ({ animal }) => {
-  // Helper function to split the color string into individual colors
-  const getColors = (colorString: string): string[] => {
-    return colorString.match(/[A-Z][a-z]*/g) || [];
-  };
-
+const AnimalData = ({animal}: AnimalType) => {
   return (
-    <div key={animal.name} className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 py-8">
       <Link
         href="/"
         className="text-blue-500 hover:underline mb-4 inline-block"
       >
-        <div className="flex gap-1">
-          <ArrowLeft /> Back to all animals
+        <div className="flex items-center justify-center gap-1">
+          <ArrowLeft size={20} /> Back to all animals
         </div>
       </Link>
       <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
-        {/* image  */}
         <AnimalImage query={animal.name} />
-
-
         <div className="p-6">
           <h1 className="text-3xl font-bold text-gray-800 dark:text-white">
             {animal.name}
@@ -81,18 +73,11 @@ const AnimalData: React.FC<AnimalType> = ({ animal }) => {
           </div>
           <div className="mb-6">
             <h2 className="text-xl font-semibold mb-2 text-gray-800 dark:text-white">
-              Colors
+              Locations
             </h2>
-            <div className="flex flex-wrap gap-2">
-              {getColors(animal.characteristics.color).map((color, index) => (
-                <span
-                  key={index}
-                  className="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white px-2 py-1 rounded"
-                >
-                  {color}
-                </span>
-              ))}
-            </div>
+            <p className="text-gray-600 dark:text-gray-400">
+              {animal.locations.join(", ")}
+            </p>
           </div>
           <div>
             <h2 className="text-xl font-semibold mb-2 text-gray-800 dark:text-white">
@@ -100,7 +85,7 @@ const AnimalData: React.FC<AnimalType> = ({ animal }) => {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {Object.entries(animal.characteristics).map(([key, value]) =>
-                key !== "slogan" && key !== "color" ? (
+                key !== "slogan" ? (
                   <div
                     key={key}
                     className="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg"
@@ -122,7 +107,7 @@ const AnimalData: React.FC<AnimalType> = ({ animal }) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default AnimalData;
+export default AnimalData

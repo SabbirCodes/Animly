@@ -37,10 +37,9 @@ const AnimalImage: React.FC<UnsplashImageProps> = ({
 
     setLoading(true);
     setError(null);
-
     try {
       const response = await fetch(
-        `https://api.unsplash.com/search/photos?query=${encodeURIComponent(
+        `https://api.unsplash.com/search/photos/?query=${encodeURIComponent(
           query
         )}&orientation=landscape`,
         {
@@ -74,9 +73,9 @@ const AnimalImage: React.FC<UnsplashImageProps> = ({
   }, [query]);
 
   return (
-    <div className={`relative bg-gray-100 dark:bg-gray-700 ${className} ${height}`}>
+    <div className={`relative bg-gray-100 dark:bg-gray-700 md:dark:bg-gray-800 ${className} ${height} ${error && "hidden"}`}>
       {loading ? (
-        <div className="flex items-center justify-center w-full h-full">
+        <div className="flex items-center justify-center w-full h-full md:w-96 md:ml-5 md:mt-5 md:rounded-lg">
           <RefreshCcw className="w-8 h-8 animate-spin text-gray-500" />
         </div>
       ) : error ? (
@@ -85,9 +84,10 @@ const AnimalImage: React.FC<UnsplashImageProps> = ({
         </div>
       ) : image ? (
         <img
+          key={image.id}
           src={image.urls.regular}
           alt={image.alt_description || query}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover md:w-96 md:ml-5 md:mt-5 md:rounded-lg"
         />
       ) : null}
     </div>
