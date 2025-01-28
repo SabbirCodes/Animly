@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState, useEffect } from "react";
 import { RefreshCcw } from "lucide-react";
 
@@ -14,6 +14,15 @@ interface UnsplashImageData {
     regular: string;
   };
   alt_description: string | null;
+  user: {
+    name: string;
+    links: {
+      html: string;
+    };
+  };
+  links: {
+    download_location: string;
+  };
 }
 
 const AnimalImage: React.FC<UnsplashImageProps> = ({
@@ -25,7 +34,7 @@ const AnimalImage: React.FC<UnsplashImageProps> = ({
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  // Replace with your Unsplash access key
+
   const UNSPLASH_ACCESS_KEY = process.env.NEXT_PUBLIC_UNSPLASH_ACCESS_KEY;
 
   const fetchUnsplashImage = async () => {
@@ -73,7 +82,11 @@ const AnimalImage: React.FC<UnsplashImageProps> = ({
   }, [query]);
 
   return (
-    <div className={`relative bg-gray-100 dark:bg-gray-700 md:dark:bg-gray-800 ${className} ${height} ${error && "hidden"}`}>
+    <div
+      className={`relative bg-gray-100 dark:bg-gray-700 md:dark:bg-gray-800 ${className} ${height} ${
+        error && "hidden"
+      }`}
+    >
       {loading ? (
         <div className="flex items-center justify-center w-full h-full md:w-96 md:ml-5 md:mt-5 md:rounded-lg">
           <RefreshCcw className="w-8 h-8 animate-spin text-gray-500" />
@@ -83,12 +96,36 @@ const AnimalImage: React.FC<UnsplashImageProps> = ({
           <p>{error}</p>
         </div>
       ) : image ? (
-        <img
-          key={image.id}
-          src={image.urls.regular}
-          alt={image.alt_description || query}
-          className="w-full h-full object-cover md:w-96 md:ml-5 md:mt-5 md:rounded-lg"
-        />
+        <div className="relative group w-full h-full md:w-96 md:ml-5 md:mt-5 md:rounded-lg">
+          <img
+            key={image.id}
+            src={image.urls.regular}
+            alt={image.alt_description || query}
+            className="w-full h-full object-cover md:rounded-lg"
+          />
+          <div className="absolute inset-0 flex flex-col items-center justify-end bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-opacity duration-300 text-white p-4 md:rounded-lg">
+            <p className="text-sm text-center hidden group-hover:block">
+              Photo by{" "}
+              <a
+                href={`${image.user.links.html}?utm_source=your_app_name&utm_medium=referral`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline"
+              >
+                {image.user.name}
+              </a>{" "}
+              on{" "}
+              <a
+                href="https://unsplash.com?utm_source=your_app_name&utm_medium=referral"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline"
+              >
+                Unsplash
+              </a>
+            </p>
+          </div>
+        </div>
       ) : null}
     </div>
   );

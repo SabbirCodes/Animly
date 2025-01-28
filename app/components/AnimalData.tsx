@@ -20,7 +20,7 @@ const AnimalData = ({animal}: AnimalType) => {
         </div>
       </Link>
       <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
-        <AnimalImage query={animal.name} />
+        <AnimalImage query={animal.name} key={animal.name} />
         <div className="p-6">
           <h1 className="text-3xl font-bold text-gray-800 dark:text-white">
             {animal.name}

@@ -52,9 +52,9 @@ export default async function AnimalPage({ params }: any) {
 
 
   return Array.isArray(animal) && (
-    <div key={name}>
-      {animal.map((data) => (
-        <AnimalData key={data.id} animal={data} />
+    <div>
+      {animal.map((data, idx) => (
+        <AnimalData key={idx} animal={data} />
       ))}
     </div>
   )

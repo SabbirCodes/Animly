@@ -26,7 +26,7 @@ export default function AnimalList() {
     <div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {randomAnimals.slice(0, visibleCount).map((animal, idx) => (
-          <AnimalCard key={animal.id} name={animal.name} id={idx} />
+          <AnimalCard key={animal.name} name={animal.name} id={idx} />
         ))}
       </div>
 
