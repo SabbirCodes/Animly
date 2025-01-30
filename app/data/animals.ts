@@ -106,7 +106,7 @@ export const animals: Animals[] = [
   { id: 99, name: "Armadillo" },
   { id: 100, name: "Ostrich" },
   { id: 101, name: "Platypus" },
-  { id: 102, name: "Meerkat" },
+  { id: 102, name: "Panther" },
   { id: 103, name: "Lemur" },
   { id: 104, name: "Tapir" },
   { id: 105, name: "Wombat" },

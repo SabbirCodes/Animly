@@ -20,9 +20,6 @@ interface UnsplashImageData {
       html: string;
     };
   };
-  links: {
-    download_location: string;
-  };
 }
 
 const AnimalImage: React.FC<UnsplashImageProps> = ({
