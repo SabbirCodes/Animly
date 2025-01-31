@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
         },
       ],
     },
-  }
+  };
 }
 
 export default async function AnimalPage({ params }: any) {
@@ -50,12 +50,15 @@ export default async function AnimalPage({ params }: any) {
     );
   }
 
-
-  return Array.isArray(animal) && (
+  return Array.isArray(animal) ? (
     <div>
       {animal.map((data, idx) => (
         <AnimalData key={idx} animal={data} />
       ))}
     </div>
-  )
+  ) : (
+    <div>
+      <AnimalData key={animal.name} animal={animal} />
+    </div>
+  );
 }

@@ -16,7 +16,8 @@ export default function AnimalList() {
   useEffect(() => {
     const shuffled = [...animals].sort(() => Math.random() - 0.5);
     setRandomAnimals(shuffled);
-  }, [" "]);
+  }, []);
+  
 
   const loadMore = () => {
     setVisibleCount(visibleCount + 30);

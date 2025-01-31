@@ -186,6 +186,8 @@ export const animals: Animals[] = [
   { id: 179, name: "Pheasant" },
   { id: 180, name: "Warbler" },
   { id: 181, name: "Mockingbird" },
+  { id: 182, name: "Saola" },
+  { id: 183, name: "Sun Bear" },
 
   // Continuing with more mammals, birds, reptiles, etc...
   { id: 978, name: "Narwhal" },
