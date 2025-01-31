@@ -35,7 +35,7 @@ export default function AnimalList() {
         <div className='flex justify-center'>
           <button
           onClick={loadMore}
-          className="mt-6 px-4 p-2 dark:bg-blue-700 dark:hover:bg-blue-900 bg-gray-800 hover:bg-gray-600 text-white rounded"
+          className="mt-6 px-4 p-2 dark:bg-blue-700 dark:active:bg-blue-900 bg-gray-800 active:bg-gray-600 text-white rounded"
         >
           Load More
         </button>
