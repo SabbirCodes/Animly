@@ -37,7 +37,7 @@ export default function RootLayout({
       <body
         className={`bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100`}
       >
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
           <div className="min-h-screen flex flex-col">
             <header className="bg-white dark:bg-gray-800 shadow-md">
               <nav className="container mx-auto px-6 py-2 md:px-10 md:py-4 flex justify-between items-center">

@@ -4,7 +4,6 @@ interface Animals {
 }
 
 export const animals: Animals[] = [
-  { id: 0, name: "Panda" },
   { id: 1, name: "Lion" },
   { id: 2, name: "Elephant" },
   { id: 3, name: "Giraffe" },
@@ -188,6 +187,29 @@ export const animals: Animals[] = [
   { id: 181, name: "Mockingbird" },
   { id: 182, name: "Saola" },
   { id: 183, name: "Sun Bear" },
+  { id: 184, name: "Clownfish" },
+  { id: 185, name: "Moray Eel" },
+  { id: 186, name: "Lionfish" },
+  { id: 187, name: "Anglerfish" },
+  { id: 188, name: "Pufferfish"},
+  { id: 189, name: "Seahorse" },
+  { id: 190, name: "Sea Dragon" },
+  { id: 191, name: "Nudibranch" },
+  { id: 192, name: "Manatee" },
+  { id: 193, name: "Sperm Whale" },
+  { id: 194, name: "Blue Whale" },
+  { id: 195, name: "Fin Whale" },
+  { id: 196, name: "Humpback Whale" },
+  { id: 197, name: "Parrotfish" },
+  { id: 198, name: "Flamingo " },
+  { id: 199, name: "Aardvark" },
+  { id: 200, name: "Aardwolf" },
+  { id: 201, name: "Bongo" },
+  { id: 202, name: "Malayan Civet" },
+  { id: 203, name: "Eland" },
+  { id: 204, name: "Blobfish" },
+  { id: 205, name: "Saola" },
+  
 
   // Continuing with more mammals, birds, reptiles, etc...
   { id: 978, name: "Narwhal" },
