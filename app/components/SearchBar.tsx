@@ -15,7 +15,7 @@ export default function SearchBar() {
   }
 
   return (
-    <form onSubmit={handleSearch} className="mb-8">
+    <form onSubmit={handleSearch} className="mb-8 shadow-md">
       <input
         type="text"
         value={query}

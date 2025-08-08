@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { RefreshCcw } from "lucide-react";
+import { RotateCw } from "lucide-react";
 
 interface UnsplashImageProps {
   query: string;
@@ -30,7 +30,6 @@ const AnimalImage: React.FC<UnsplashImageProps> = ({
   const [image, setImage] = useState<UnsplashImageData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-
 
   const UNSPLASH_ACCESS_KEY = process.env.NEXT_PUBLIC_UNSPLASH_ACCESS_KEY;
 
@@ -86,7 +85,7 @@ const AnimalImage: React.FC<UnsplashImageProps> = ({
     >
       {loading ? (
         <div className="flex items-center justify-center w-full h-full md:w-96 md:ml-5 md:mt-5 md:rounded-lg">
-          <RefreshCcw className="w-8 h-8 animate-spin text-gray-500" />
+          <RotateCw className="w-10 h-10 animate-spin text-gray-500" />
         </div>
       ) : error ? (
         <div className="absolute inset-0 flex items-center justify-center text-red-500">
